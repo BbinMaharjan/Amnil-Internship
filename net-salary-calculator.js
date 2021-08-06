@@ -17,10 +17,17 @@ const calculateNetSalary = (grossSalary) => {
       netSalary = grossSalary - (10000 * 0.02 + (grossSalary - 10000) * 0.04);
       break;
     case grossSalary > 20000 && grossSalary <= 30000: //Tax bracket >20000 to <=30000 by 7% Tax
-      netSalary = grossSalary - (20000 * 0.02 + (grossSalary - 20000) * 0.07);
+      netSalary =
+        grossSalary -
+        (10000 * 0.02 + (20000 - 10000) * 0.04 + (grossSalary - 20000) * 0.07);
       break;
     case grossSalary >= 30001: //Tax bracket >30000 by 10% Tax
-      netSalary = grossSalary - (30000 * 0.07 + (grossSalary - 30000) * 0.1);
+      netSalary =
+        grossSalary -
+        (10000 * 0.02 +
+          (20000 - 10000) * 0.04 +
+          (30000 - 20000) * 0.07 +
+          (grossSalary - 30000) * 0.1);
       break;
   }
   return netSalary;
