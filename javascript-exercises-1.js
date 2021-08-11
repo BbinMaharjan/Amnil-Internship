@@ -55,3 +55,17 @@ let newArray = Object.values(providedObject);
 console.log(newArray);
 
 //Ex:4 End
+
+//Ex:5 Start(Finding displacement value between p1 and p2)
+const points = {
+  p1: [2, 3],
+  p2: [6, 7],
+  get displacement() {
+    let displacement = Math.sqrt(
+      (points.p2[0] - points.p1[0]) ** 2 + (points.p2[1] - points.p1[1]) ** 2
+    );
+    return displacement;
+  },
+};
+console.log(`Value = ${points.displacement}`);
+//Ex:5 End
