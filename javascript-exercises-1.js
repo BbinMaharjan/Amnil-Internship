@@ -29,3 +29,16 @@ Number.prototype.cubeNumber = function (num) {
 let num = 2;
 Number.prototype.cubeNumber(num);
 //Ex:2 End
+
+//Ex:3 Start (converting Array to Object)
+let providedArray = [
+  { id: 1, fullName: "John Doe" },
+  { id: 2, fullName: "Jim Doe" },
+  { id: 3, fullName: "Jane Doe" },
+];
+function reducer(accumulator, currentElement) {
+  return { ...accumulator, [currentElement.id]: currentElement };
+}
+let newObject = providedArray.reduce(reducer, {});
+console.log(newObject);
+//Ex:3 End
