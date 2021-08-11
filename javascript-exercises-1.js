@@ -95,3 +95,23 @@ console.log(person.fullName());
 console.log(person.age());
 
 //Ex:6 End
+
+//Ex:7 Start(Recursion of given number)
+function recursion(number) {
+  if (number > 0 || number < 0) {
+    console.log(number);
+  }
+  if (number == 0) {
+    return 0;
+  } else {
+    if (number >= 0) {
+      return recursion(number - 1);
+    } else {
+      return recursion(number + 1);
+    }
+  }
+}
+console.log(recursion(5));
+console.log(recursion(-5));
+
+//Ex:7 End
