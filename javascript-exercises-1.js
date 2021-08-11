@@ -69,3 +69,29 @@ const points = {
 };
 console.log(`Value = ${points.displacement}`);
 //Ex:5 End
+
+//Ex:6 Start (Print Full Name and age in years and age in days)
+function Person(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = dob;
+  this.fullName = function () {
+    return `${this.firstName} ${this.lastName}`;
+  };
+  this.age = function () {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const now = new Date();
+    const birthday = new Date(this.dob);
+    const dayDiff = Math.round(Math.abs((now - birthday) / oneDay));
+    const age = Math.floor(dayDiff / 365);
+    const days = Math.floor(dayDiff % 365);
+
+    return `${age} years and ${days} days old.`;
+  };
+}
+
+let person = new Person("John", "Doe", "1996-03-27");
+console.log(person.fullName());
+console.log(person.age());
+
+//Ex:6 End
