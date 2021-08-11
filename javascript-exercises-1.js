@@ -42,3 +42,16 @@ function reducer(accumulator, currentElement) {
 let newObject = providedArray.reduce(reducer, {});
 console.log(newObject);
 //Ex:3 End
+
+//Ex:4 Start(converting Object to Array)
+let providedObject = {
+  1: { fullName: "John Doe" },
+  2: { fullName: "Jim Doe" },
+  3: { fullName: "Jane Doe" },
+};
+
+let newArray = Object.values(providedObject);
+
+console.log(newArray);
+
+//Ex:4 End
