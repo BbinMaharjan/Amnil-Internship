@@ -106,9 +106,7 @@ console.log(person.age());
 function recursive(num) {
   console.log(num);
   if (num != 0) {
-    if (num < 0) {
-      recursive((num = num + 1));
-    } else recursive((num = num - 1));
+    num < 0 ? recursive((num = num + 1)) : recursive((num = num - 1));
   }
 }
 recursive(5);
