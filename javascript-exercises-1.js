@@ -55,9 +55,9 @@ let providedObject = {
   2: { fullName: "Jim Doe" },
   3: { fullName: "Jane Doe" },
 };
-
-let newArray = Object.values(providedObject);
-
+let newArray = Object.keys(providedObject).map((key) => {
+  return { id: key, fullName: providedObject[key].fullName };
+});
 console.log(newArray);
 
 //Ex:4 End
