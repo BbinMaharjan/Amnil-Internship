@@ -24,13 +24,13 @@ console.log(word3.isPalindrome());
 //Ex:1 End
 
 //Ex:2 Start (Cube of a number)
-Number.prototype.cubeNumber = function (num) {
-  const cube = num ** 3;
-  console.log(`${num} cube is ${cube}`);
+Number.prototype.cubeNumber = function () {
+  const cube = this ** 3;
   return cube;
 };
 let num = 2;
-Number.prototype.cubeNumber(num);
+console.log(num.cubeNumber());
+
 //Ex:2 End
 
 //Ex:3 Start (converting Array to Object)
