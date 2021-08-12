@@ -1,23 +1,26 @@
 //JavaScript Exercies
 
 //Ex:1 Start (Palindrome word or not)
-String.prototype.isPalindrome = function (word) {
-  const arrayValues = string.split(""); //converting strinf to an array
-
+String.prototype.isPalindrome = function () {
+  const arrayValues = this.split(""); //converting string to an array
   const reverseArrayValue = arrayValues.reverse(); // reversing the arry values
-
   const reverseString = reverseArrayValue.join(""); //converting array to sting
 
-  if (string == reverseString) {
-    console.log(`${word} Is Palindrome`);
+  if (this.length == 0 || this.length == 1) {
+    return "Wrong word";
+  } else if (this == reverseString) {
+    return true;
   } else {
-    console.log(`${word} Is Not Palindrome`);
+    return false;
   }
 };
-String.prototype.isPalindrome((string = "level"));
-String.prototype.isPalindrome((string = "shovel"));
-String.prototype.isPalindrome((string = "noon"));
-String.prototype.isPalindrome((string = "youtube"));
+let word1 = "level";
+let word2 = "shovel";
+let word3 = "b";
+console.log(word1.isPalindrome());
+console.log(word2.isPalindrome());
+console.log(word3.isPalindrome());
+
 //Ex:1 End
 
 //Ex:2 Start (Cube of a number)
