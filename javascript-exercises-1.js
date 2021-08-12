@@ -33,17 +33,20 @@ console.log(num.cubeNumber());
 
 //Ex:2 End
 
-//Ex:3 Start (converting Array to Object)
+//Ex:3 Start (converting Array into Object)
 let providedArray = [
   { id: 1, fullName: "John Doe" },
   { id: 2, fullName: "Jim Doe" },
   { id: 3, fullName: "Jane Doe" },
 ];
-function reducer(accumulator, currentElement) {
-  return { ...accumulator, [currentElement.id]: currentElement };
-}
-let newObject = providedArray.reduce(reducer, {});
-console.log(newObject);
+let flattend = {};
+providedArray.map((m) => {
+  const key = m.id,
+    vaule = { fullName: m.fullName };
+  flattend[key] = vaule;
+});
+console.log(flattend);
+
 //Ex:3 End
 
 //Ex:4 Start(converting Object to Array)
