@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TodosApp</title>
+<link rel='stylesheet' href='css/style.css' type='text/css'>
+</head>
+<body>
+    <header>
+       <strong>My Todos</strong> 
+    </header>
+    <div class="container">
+        <div class="container-input">
+            <input type="text" id="txttask" placeholder="My Task : Playing Games">
+            <input type="button" value="Add" class="addbtn" onclick="addTask()" >
+            <label id='error'></label>
+        </div>
+        <div class="container-b">
+            <h1>My Task</h1>
+            <input type="button" value="Delete All" class="deletebtn" onclick="deleteAll()">
+        </div>
+        <div class="listtask">
+            <ul id="tasklist">
+            </ul>
+        </div>
+    </div>
+    
+<script type='text/javascript' src='js/app.js'></script>
+</body>
+</html>
