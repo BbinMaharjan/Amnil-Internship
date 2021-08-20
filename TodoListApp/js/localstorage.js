@@ -38,3 +38,12 @@ const deleteTaskByName = (taskName) => {
 const deleteAllTasks = () => {
   localStorage.setItem("tasks", JSON.stringify([]));
 };
+
+export default {
+  getData,
+  setData,
+  addItemToStorage,
+  completeTaskByName,
+  deleteAllTasks,
+  deleteTaskByName,
+};

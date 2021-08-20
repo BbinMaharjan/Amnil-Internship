@@ -1,19 +1,23 @@
+import service from "./localstorage.js";
 // Add Todos
-const addTask = () => {
+document.getElementById("addTask").onclick = function () {
+  addTask();
+};
+function addTask() {
   let task = document.getElementById("txttask").value;
   let startDate = document.getElementById("starttime").value;
   let endDate = document.getElementById("endtime").value;
   if (task === "") {
     alert("Enter Your Task !!! ");
   } else {
-    addItemToStorage({ task, startDate, endDate, completed: false });
+    service.addItemToStorage({ task, startDate, endDate, completed: false });
     updateTaskList();
     addEventListeners();
   }
   document.getElementById("txttask").value = "";
   document.getElementById("starttime").value = "";
   document.getElementById("endtime").value = "";
-};
+}
 
 // Create an element
 const createListElement = (element, taskListElement) => {
@@ -61,8 +65,9 @@ const createListElement = (element, taskListElement) => {
 
 const updateTaskList = () => {
   const data =
-    getData().sort((a, b) => new Date(a.startDate) - new Date(b.startDate)) ||
-    [];
+    service
+      .getData()
+      .sort((a, b) => new Date(a.startDate) - new Date(b.startDate)) || [];
   document.getElementById("tasklist").innerHTML = " ";
   let taskListElement = document.getElementById("tasklist");
 
@@ -74,8 +79,9 @@ const updateTaskList = () => {
 //search list
 const updateListWithFilter = (filter) => {
   const data =
-    getData().sort((a, b) => new Date(a.startDate) - new Date(b.startDate)) ||
-    [];
+    service
+      .getData()
+      .sort((a, b) => new Date(a.startDate) - new Date(b.startDate)) || [];
   const filteredData = data.filter((item) =>
     item.task.toLowerCase().includes(filter.toLowerCase())
   );
@@ -86,20 +92,26 @@ const updateListWithFilter = (filter) => {
   });
 };
 
-const filterSearch = () => {
+document.getElementById("search").onkeyup = function () {
+  filterSearch();
+};
+function filterSearch() {
   const searchValue = document.getElementById("search").value;
   updateListWithFilter(searchValue);
-};
+}
 
 //Delete all task
-const deleteAll = () => {
+document.getElementById("deleteAll").onclick = function () {
+  deleteAll();
+};
+function deleteAll() {
   if (confirm("Are You Sure !!!")) {
     document.getElementById("tasklist").innerHTML = " ";
-    deleteAllTasks();
+    service.deleteAllTasks();
   } else {
     return false;
   }
-};
+}
 
 const addEventListeners = () => {
   // Delete button event listeners
@@ -107,7 +119,7 @@ const addEventListeners = () => {
 
   deleteButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
-      deleteTaskByName(e.target.parentNode.children[0].innerText);
+      service.deleteTaskByName(e.target.parentNode.children[0].innerText);
       updateTaskList();
     });
   });
@@ -118,7 +130,7 @@ const addEventListeners = () => {
   );
   completeButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
-      completeTaskByName(e.target.parentNode.children[0].innerText);
+      service.completeTaskByName(e.target.parentNode.children[0].innerText);
       updateTaskList();
     });
   });
