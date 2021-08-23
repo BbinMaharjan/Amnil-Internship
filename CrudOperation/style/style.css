@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+header {
+  width: 100%;
+  height: fit-content;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.container {
+  margin-top: 0;
+  margin-left: 10px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.page {
+  margin-top: 5px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+.adduser {
+  width: 100%;
+  height: fit-content;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+}
+.form {
+  padding: 5px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1px;
+}
